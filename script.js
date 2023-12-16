@@ -38,8 +38,14 @@ for (let i = 0; i < members.length; i++) {
     memberElement.classList.add('col-4');
     memberElement.append(member);
 
+    // MILESTONE 2: evento click che aggiunge/rimuove una classe
+    memberElement.addEventListener('click', function(e){
+        console.log(e.target);
+
+        e.target.classList.toggle('bg-primary');
+    })
+
     membersContainer.appendChild(memberElement);
     
 }
 
-// MILESTONE 2: evento click che aggiunge/rimuove una classe
