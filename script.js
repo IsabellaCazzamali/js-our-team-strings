@@ -49,3 +49,29 @@ for (let i = 0; i < members.length; i++) {
     
 }
 
+document.getElementById('add-member').addEventListener('submit', function(e){
+    e.preventDefault()
+
+    // aggiunta nuovo membro
+    const newMember = document.getElementById('member').value;
+
+    console.log(newMember);
+
+    // Member
+    const memberElement = document.createElement('div');
+
+    memberElement.classList.add('col-4');
+    memberElement.append(newMember);
+
+    console.log(memberElement);
+
+    memberElement.addEventListener('click', function(e){
+        console.log(e.target);
+
+        e.target.classList.toggle('bg-primary');
+    })
+
+    membersContainer.appendChild(memberElement);
+
+    document.getElementById('member').value = '';
+})
